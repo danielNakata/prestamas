@@ -53,26 +53,26 @@ WHERE email = '".$txtUsuario."' ");
                         $_SESSION["estatususr"] = $fila["estatususr"];
                         
                         $resultado->free();
-                        $conex->close();
+                        $conexion->close();
                         header("Location: ../dashboard.php");
                     }
                 }else{
                     $resultado->free();
-                    $conex->close();
+                    $conexion->close();
                     header("Location: ../index.php?msg=NO EXISTE EL USUARIO");
                 }                
             }else{
                 $resultado->free();
-                $conex->close();
+                $conexion->close();
                 header("Location: ../index.php?msg=EMAIL O CONTRASEÑA ERRONEO");
             }            
         }else{
             $resultado->free();
-            $conex->close();
+            $conexion->close();
             header("Location: ../index.php?msg=EMAIL INCORRECTO");    
         }
     }else{
-        $conex->close();
+        $conexion->close();
         header("Location: ../index.php?msg=PARAMETROS NO RECIBIDOS CORRECTAMENTE");
     }
 
