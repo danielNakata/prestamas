@@ -1,5 +1,5 @@
 <?php
-    include("../base/Conexion.php");
+    include("base/Conexion.php");
 
     $salidaJSON = "{\"res\":\"0\", \"msg\":\"LOS PARAMETROS NO SE RECIBIERON CORRECTAMENTE2\"}";
     $clientesJSON = "";

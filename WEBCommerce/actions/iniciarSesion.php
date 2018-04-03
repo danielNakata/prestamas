@@ -7,12 +7,9 @@
     $conexion = new Conexion();
     $conex = $conexion->getConexion();
 
-    echo("<br />".$txtUsuario." - ".$txtContrasena );
-
     if(isset($txtUsuario)&&isset($txtContrasena)){
         $resultado = $conex->query("select count(*) as existe from ".$conexion->base.".tusuarios where email = '".$txtUsuario."' and contrasena= password('".$txtContrasena."') ");
         $numfilas = $resultado->num_rows;
-        echo "<br />".$numfilas."<br />";
         if($numfilas > 0){
             while($fila = $resultado->fetch_assoc()){
                 $existe = $fila["existe"];
@@ -53,26 +50,26 @@ WHERE email = '".$txtUsuario."' ");
                         $_SESSION["estatususr"] = $fila["estatususr"];
                         
                         $resultado->free();
-                        $conexion->close();
+                        $conex->close();
                         header("Location: ../dashboard.php");
                     }
                 }else{
                     $resultado->free();
-                    $conexion->close();
+                    $conex->close();
                     header("Location: ../index.php?msg=NO EXISTE EL USUARIO");
                 }                
             }else{
                 $resultado->free();
-                $conexion->close();
+                $conex->close();
                 header("Location: ../index.php?msg=EMAIL O CONTRASEÑA ERRONEO");
             }            
         }else{
             $resultado->free();
-            $conexion->close();
+            $conex->close();
             header("Location: ../index.php?msg=EMAIL INCORRECTO");    
         }
     }else{
-        $conexion->close();
+        $conex->close();
         header("Location: ../index.php?msg=PARAMETROS NO RECIBIDOS CORRECTAMENTE");
     }
 

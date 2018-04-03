@@ -4,8 +4,8 @@
         
         var $host = "127.0.0.1";
         var $port = "3306";
-        var $user = "root";
-        var $pass = "";
+        var $user = "daniel";
+        var $pass = "123456";
         var $base = "webcommerce";
         var $conexion = "";
         
