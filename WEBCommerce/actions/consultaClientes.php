@@ -1,7 +1,7 @@
 <?php
-    include("base/Conexion.php");
+    include("../base/Conexion.php");
 
-    $salidaJSON = "{\"res\":\"0\", \"msg\":\"LOS PARAMETROS NO SE RECIBIERON CORRECTAMENTE2\"}";
+    $salidaJSON = "{\"res\":\"0\", \"msg\":\"LOS PARAMETROS NO SE RECIBIERON CORRECTAMENTE\"}";
     $clientesJSON = "";
     if((isset($_GET["tipoBsq"]))&&(isset($_GET["filtro"]))){
         $conex = new Conexion();
@@ -43,11 +43,15 @@
             case "1":
                 $sql.= " a.idusuario = ".$_GET["filtro"]." ";
                 break;
+                
+            case "2":
+                $sql.= " a.idcliente = ".$_GET["filtro"]." or (a.nombre like '".$_GET["filtro"]."%' or a.apellidos like '".$_GET["filtro"]."%') or a.idestatus = ".$_GET["filtro"]." ";
+                break;
         }
         
         $sql.=" order by a.idestatus asc, a.idcliente asc";
-        
         $resultado = $conexion->query($sql);
+        
         $numfilas = $resultado->num_rows;
         $salidaJSON = "{\"res\":\"0\", \"msg\":\"NO HAY DATOS PARA MOSTRAR\"}";
         if($numfilas > 0){

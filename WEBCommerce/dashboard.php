@@ -23,7 +23,7 @@
         <script src="js/webcommerce.js"></script>
     </head>
     <body>                 
-            <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" ng-controller="SesionController">
+            <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" ng-controller="SesionController" ng-init="setVarGbl(<?php echo $_SESSION['idusuario'] ?>,'<?php echo $_SESSION['nickname'] ?>','<?php echo $_SESSION['email'] ?>')">
                 <form id="frmSesion">
                 <input type="hidden" id="sesionIdUsuario" name="sesionIdUsuario" ng-model="sesion.idusuario" ng-init="sesion.idusuario =<?php echo $_SESSION['idusuario'] ?>" value="{{sesion.idusuario}}" />
                 <input type="hidden" id="sesionEmail" name="sesionEmail" ng-model="sesion.email" ng-init="sesion.email ='<?php echo $_SESSION['email'] ?>'"  value="{{sesion.email}}" />
@@ -33,7 +33,7 @@
                 <input type="hidden" id="sesionFechanac" name="sesionFechanac" ng-model="sesion.fechanac" ng-init="sesion.fechanac ='<?php echo $_SESSION['fechanac'] ?>'"  value="{{sesion.fechanac}}" />
                 <input type="hidden" id="sesionMovil" name="sesionMovil" ng-model="sesion.movil" ng-init="sesion.movil ='<?php echo $_SESSION['movil'] ?>'"  value="{{sesion.movil}}"/>
                 <input type="hidden" id="sesionIdEstatus" name="sesionIdEstatus" ng-model="sesion.idestatus" ng-init="sesion.init ='<?php echo $_SESSION['idestatus'] ?>'"  value="{{sesion.idestatus}}"/>
-                <input type="hidden" id="sesionFechaUltimoAcc" name="sesionFechaUltimoAcc" ng-model="sesion.fechaultimoacc" ng-init="sesion.fechaultimoacc =<?php echo $_SESSION['fechaultimoacc'] ?>'"  value="{{sesion.fechaultimoacc}}"/>
+                <input type="hidden" id="sesionFechaUltimoAcc" name="sesionFechaUltimoAcc" ng-model="sesion.fechaultimoacc" ng-init="sesion.fechaultimoacc ='<?php echo $_SESSION['fechaultimoacc'] ?>'"  value="{{sesion.fechaultimoacc}}"/>
                 <input type="hidden" id="sesionLugarUltimoAcc" name="sesionLugarUltimoAcc" ng-model="sesion.lugarultimoacc" ng-init="sesion.lugarultimoacc ='<?php echo $_SESSION['lugarultimoacc'] ?>'"  value="{{sesion.lugarultimoacc}}"/>
                 <input type="hidden" id="sesionFechaReg" name="sesionFechaReg" ng-model="sesion.fechareg" ng-init="sesion.fechareg ='<?php echo $_SESSION['fechareg'] ?>'"  value="{{sesion.fechareg}}"/>
                 <input type="hidden" id="sesionFechaMod" name="sesionFechaMod" ng-model="sesion.fechamod" ng-init="sesion.fechamod ='<?php echo $_SESSION['fechamod'] ?>'"  value="{{sesion.fechamod}}"/>
