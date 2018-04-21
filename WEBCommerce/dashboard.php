@@ -12,13 +12,14 @@
         <meta name="author" content="dnlNkt">
         <title>.:Prest-ta-mas:.</title>
         <link rel="stylesheet" href="js/jqueryui/jquery-ui.css" type="text/css" />
-        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="css/dashboard.css" type="text/css" />
         <script src="js/angular.js"></script>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/jqueryui/jquery-ui.js"></script>
         <script src="js/datetimepicker.js"></script>
         <script src="js/loading-bar.js"></script>
+        <script src="css/bootstrap/js/bootstrap.js"></script>
         <script src="js/funciones.js"></script>
         <script src="js/webcommerce.js"></script>
     </head>
