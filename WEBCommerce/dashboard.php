@@ -20,6 +20,7 @@
         <script src="js/datetimepicker.js"></script>
         <script src="js/loading-bar.js"></script>
         <script src="css/bootstrap/js/bootstrap.js"></script>
+        <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
         <script src="js/funciones.js"></script>
         <script src="js/webcommerce.js"></script>
     </head>

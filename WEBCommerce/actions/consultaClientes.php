@@ -14,6 +14,7 @@
                 ,IFNULL(a.telefono1,'(00) 1234 5678') AS telefono1
                 ,IFNULL(a.telefono2,'(00) 1234 5678') AS telefono2
                 ,IFNULL(a.calle, '-') AS calle
+                ,IFNULL(a.colonia, '-') AS colonia
                 ,IFNULL(a.numext, '-') AS numext
                 ,IFNULL(a.numint, '-') AS numint
                 ,IFNULL(a.delmun, '-') AS delmun
@@ -58,15 +59,16 @@
             $columnas = $resultado->fetch_fields();
             $clientesJSON = "";
             $filaJSON = "";
+            $filasJSON = "";
             while($fila = $resultado->fetch_assoc()){
                 $filaJSON = "";
                 foreach($columnas as $col){
                     $filaJSON.="\"".$col->name."\":\"".$fila[$col->name]."\",";
                 }
-                $filaJSON = "{".substr($filaJSON,0,(strrpos($filaJSON,",")))."},";
+                $filasJSON .= "{".substr($filaJSON,0,(strrpos($filaJSON,",")))."},";
             }
             
-            $clientesJSON = ",\"clientes\":[".substr($filaJSON,0,(strrpos($filaJSON,",")))."]";
+            $clientesJSON = ",\"clientes\":[".substr($filasJSON,0,(strrpos($filasJSON,",")))."]";
             $salidaJSON = "{\"res\":\"1\", \"msg\":\"DATOS OBTENIDOS\"".$clientesJSON."}";
         }
         $resultado->free();
