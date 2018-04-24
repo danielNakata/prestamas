@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="js/jqueryui/jquery-ui.css" type="text/css" />
         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="css/dashboard.css" type="text/css" />
+        <link rel="stylesheet" href="css/estilos.css" type="text/css" />
         <script src="js/angular.js"></script>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/jqueryui/jquery-ui.js"></script>

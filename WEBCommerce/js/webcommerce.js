@@ -232,7 +232,7 @@ var webcommerce;
         };
         /*selecciona al cliente*/
         $scope.seleccionaCliente = function (cliente) {
-            alert(JSON.stringify(cliente));
+            
             $scope.nuevoCliente.idcliente = cliente.idcliente;
             $scope.nuevoCliente.nombre = cliente.nombre;
             $scope.nuevoCliente.apellidos = cliente.apellidos;
